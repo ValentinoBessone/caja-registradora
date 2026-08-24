@@ -95,3 +95,24 @@ do
             break;
     }
 } while (!opcionValida);
+
+
+Console.WriteLine();
+
+for (int i = 0; i < 30; i++) Console.Write("-");
+Console.WriteLine($"\n       {nombreComercio}");
+for (int i = 0; i < 30; i++) Console.Write("-");
+Console.WriteLine();
+
+Console.WriteLine($"Cajero: {nombreCajero}");
+Console.WriteLine($"Productos: {cantidadProductos}");
+Console.WriteLine($"Subtotal: {total + descuento}");
+Console.WriteLine($"Descuento: {descuento}");
+Console.WriteLine($"Recargo: 0");
+
+for (int i = 0; i < 30; i++) Console.Write("-");
+Console.WriteLine($"\nTOTAL: {total}");
+for (int i = 0; i < 30; i++) Console.Write("-");
+Console.WriteLine();
+
+Console.ReadKey();
