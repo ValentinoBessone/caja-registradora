@@ -60,3 +60,38 @@ Console.WriteLine($"Descuento: -${descuento}");
 Console.WriteLine($"Total a pagar: ${total - descuento}\n");
 
 Console.ReadKey();
+
+string método_de_pago = "";
+bool opcionValida = false;
+
+do
+{
+    Console.WriteLine("¿Como desea pagar?");
+    Console.WriteLine("1 - Efectivo");
+    Console.WriteLine("2 - Débito");
+    Console.WriteLine("3 - Crédito");
+    método_de_pago = Console.ReadLine();
+
+
+    switch (método_de_pago)
+    {
+        case "1":
+            total = (total - descuento) * 0.90m;
+            Console.WriteLine("Pago en efectivo seleccionado.");
+            opcionValida = true;
+            break;
+        case "2":
+            total = total - descuento;
+            Console.WriteLine("Pago con tarjeta de débito seleccionado.");
+            opcionValida = true;
+            break;
+        case "3":
+            total = (total - descuento) * 1.15m;
+            Console.WriteLine("Pago con tarjeta de crédito seleccionado.");
+            opcionValida = true;
+            break;
+        default:
+            Console.WriteLine("Opción inválida. Intente de nuevo.\n");
+            break;
+    }
+} while (!opcionValida);
