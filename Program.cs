@@ -43,9 +43,20 @@ do
 
 } while (opcion != "2");
 
+const decimal DESC_10 = 0.10m;
+const decimal DESC_5 = 0.05m;
+
+decimal descuento = 0;
+
+if (total > 50000)
+    descuento = total * DESC_10;
+else if (total > 20000)
+    descuento = total * DESC_5;
+
 Console.WriteLine("\n=== Cierre de Venta ===");
 Console.WriteLine($"Cantidad de productos: {cantidadProductos}");
-Console.WriteLine($"Total a pagar: ${total}\n");
+Console.WriteLine($"Subtotal: ${total}");
+Console.WriteLine($"Descuento: -${descuento}");
+Console.WriteLine($"Total a pagar: ${total - descuento}\n");
 
-Console.WriteLine("Precione cualquier tecla para salir");
 Console.ReadKey();
